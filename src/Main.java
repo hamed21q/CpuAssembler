@@ -44,13 +44,13 @@ public class Main {
         }
 
     }
-    private static String zeroExtend(String s){
-        if(s.length() >= 5) return s;
-        int ss = 5 - s.length();
-        String sss =s;
-        for (int i = 0; i < ss; i++) {
-            sss = "0"+sss;
+    private static String zeroExtend(String number){
+        if(number.length() >= 5) return number;
+        int numberOfZeroToExtend = 5 - number.length();
+        String extendedNumber = number;
+        for (int i = 0; i < numberOfZeroToExtend; i++) {
+            extendedNumber = "0" + extendedNumber;
         }
-        return sss;
+        return extendedNumber;
     }
 }
