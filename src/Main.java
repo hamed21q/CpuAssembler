@@ -8,10 +8,10 @@ public class Main {
         BufferedReader bf = new BufferedReader(new FileReader(file));
         String line;
         while ((line = bf.readLine()) != null) {
-            String[] s = line.split(","); //ADD,2,3,7 => [Add, 2, 3, 7]
+            String[] s = line.split(","); //"ADD,2,3,7" => [Add, 2, 3, 7]
             String opc = opcode.dict.get(s[0]); //convert ADD to equivalent binary command
 
-            //convert decimal address to binart
+            //convert decimal address to binary
             String DA =  Integer.toBinaryString(Integer.parseInt(s[1]));
             String AA = Integer.toBinaryString(Integer.parseInt(s[2]));
             String BA = Integer.toBinaryString(Integer.parseInt(s[3]));
