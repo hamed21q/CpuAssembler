@@ -16,6 +16,13 @@ public class PipeLine {
             String DA =  Integer.toBinaryString(Integer.parseInt(s[1]));
             String AA = Integer.toBinaryString(Integer.parseInt(s[2]));
             String BA = Integer.toBinaryString(Integer.parseInt(s[3]));
+            if (Integer.parseInt(s[3]) < 0) {
+                BA = addOneToBinaryString(BA);
+                BA = BA.substring(BA.length() - 15);
+
+
+
+            }
 
             //if the input is 2, we got 10, but we need 00010
             DA = zeroExtend(DA);
@@ -78,4 +85,20 @@ public class PipeLine {
         }
         return false;
     }
+    public static String addOneToBinaryString(String binaryString) {
+        StringBuilder result = new StringBuilder();
+        int carry = 1;
+        for (int i = binaryString.length() - 1; i >= 0; i--) {
+            int sum = carry + binaryString.charAt(i) - '0';
+            result.append(sum % 2);
+            carry = sum / 2;
+        }
+        if (carry > 0) {
+            result.append(carry);
+        }
+        return result.reverse().toString();
+    }
+
+
+
 }
