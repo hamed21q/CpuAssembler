@@ -3,9 +3,9 @@ import java.util.Hashtable;
 
 public class Opcode {
     public Hashtable<String, String> dict;
-    public Opcode() throws IOException {
+    public Opcode(String path) throws IOException {
         dict = new Hashtable<>();
-        File file = new File("src/PipeLineOpcodes.txt");
+        File file = new File(path);
         BufferedReader bf = new BufferedReader(new FileReader(file));
         String line;
         while ((line = bf.readLine()) != null) {

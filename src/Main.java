@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Opcode opcode = new Opcode();
+        Opcode opcode = new Opcode("src/Opcodes.txt");
         File file = new File("src/instruction.txt");
         BufferedReader bf = new BufferedReader(new FileReader(file));
         String line;
